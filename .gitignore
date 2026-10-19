@@ -1,0 +1,15 @@
+# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# SQLite database (opsional: boleh disertakan saat pengumpulan)
+# products.db
+products.db-shm
+products.db-wal
+
+# Soal tugas (tidak perlu ikut di repository)
+Tugas_1_IF133_Backend_Skeleton_Data_Persistence.pdf
