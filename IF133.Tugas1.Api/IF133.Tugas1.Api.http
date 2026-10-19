@@ -1,6 +1,49 @@
-@IF133.Tugas1.Api_HostAddress = http://localhost:5116
+@host = http://localhost:5116
 
-GET {{IF133.Tugas1.Api_HostAddress}}/weatherforecast/
+### Read all - 200 OK
+GET {{host}}/api/products
 Accept: application/json
 
-###
+### Create - 201 Created
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Keyboard Mechanical",
+  "description": "Keyboard 75%",
+  "price": 350000,
+  "stock": 5
+}
+
+### Read one - 200 OK
+GET {{host}}/api/products/1
+Accept: application/json
+
+### Update - 204 No Content
+PUT {{host}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Keyboard Mechanical TKL",
+  "description": "Keyboard 80% hot-swap",
+  "price": 425000,
+  "stock": 8
+}
+
+### Delete - 204 No Content
+DELETE {{host}}/api/products/1
+
+### Gagal: id tidak ada - 404 Not Found
+GET {{host}}/api/products/999
+Accept: application/json
+
+### Gagal: body tidak valid - 400 Bad Request
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "description": "data tidak valid",
+  "price": -100,
+  "stock": -5
+}
